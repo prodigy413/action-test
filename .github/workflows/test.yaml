@@ -12,3 +12,5 @@ jobs:
       - name: Run test
         run: |
           echo "test"
+          pwd
+          ls -l
