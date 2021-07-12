@@ -12,8 +12,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Run test
+      - name: Run Test
         run: |
           echo "test"
           pwd
           ls -l
+      - name: Slack Test
+        uses: slackapi/slack-github-action@v1
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK }}
+        with:
+          slack-message: 'Test message from Github actions'
