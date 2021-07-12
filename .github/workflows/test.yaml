@@ -19,7 +19,8 @@ jobs:
           ls -l
       - name: Slack Test
         uses: slackapi/slack-github-action@v1
-        env:
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK }}
         with:
-          slack-message: 'Test message from Github actions'
+          channel-id: '#github-actions'
+          slack-message: 'posting from a github action!'
+        env:
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
