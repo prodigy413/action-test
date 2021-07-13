@@ -17,10 +17,8 @@ jobs:
           echo "test"
           pwd
           ls -l
-      - name: Slack Test
-        uses: slackapi/slack-github-action@v1
-        with:
-          channel-id: '#github-actions'
-          slack-message: 'posting from a github action!'
-        env:
-          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+      - name: Simple JS Action
+        id: greet 
+        uses: actions/hello-world-javascript-action@v1
+        with: 
+          who-to-greet: John
