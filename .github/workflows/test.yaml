@@ -13,7 +13,7 @@ jobs:
         run: |
           echo "test"
           pwd
-          ls -l
+          ls -l > test.log
       - name: Test artifact
         uses: actions/upload-artifact@v2
         with:
