@@ -15,4 +15,6 @@ jobs:
       - name: Run Test
         run: |
           zip -X test.zip test.txt
+          ls -l test.txt
+          zipinfo test.zip
           md5sum test.zip
