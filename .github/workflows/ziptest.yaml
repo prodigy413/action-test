@@ -9,8 +9,10 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
       - name: Run Test
         run: |
-          echo "test" > test.txt
           zip test.zip test.txt
           md5sum test.zip
