@@ -1,21 +1,22 @@
-name: zip-test
-
-on:
-  push:
-    branches:
-      - main
-
-jobs:
-  zip_test:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-
-      - name: Run Test
-        run: |
-          find . -exec touch -t 202112121212.00 {} +
-          zip -X test.zip test.txt
-          ls -l test.txt
-          zipinfo test.zip
-          md5sum test.zip
+#name: zip-test
+#
+#on:
+#  push:
+#    branches:
+#      - main
+#
+#jobs:
+#  zip_test:
+#    runs-on: ubuntu-latest
+#    steps:
+#      - name: Checkout
+#        uses: actions/checkout@v2
+#
+#      - name: Run Test
+#        run: |
+#          find . -exec touch -t 202112121212.00 {} +
+#          zip -X test.zip test.txt
+#          ls -l test.txt
+#          zipinfo test.zip
+#          md5sum test.zip
+#
