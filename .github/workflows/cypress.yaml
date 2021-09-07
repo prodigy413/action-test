@@ -8,13 +8,16 @@ on:
 jobs:
   cypress_test:
     runs-on: ubuntu-latest
-    container: cypress/included:8.3.1
+    container:
+      image: cypress/included:8.3.1
+      volumes:
+        - /tmp:/tmp
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - run: cd test ; cypress run ; zip -r videos.zip cypress/videos/*
+      - run: cd test ; cypress run ; zip -r /tmp/videos.zip cypress/videos/*
       - name: Test artifact
         uses: actions/upload-artifact@v2
         with:
           name: videos.zip
-          path: ./videos.zip
+          path: /tmp/videos.zip

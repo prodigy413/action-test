@@ -1,22 +1,23 @@
-name: artifacts_test
-
-on:
-  push:
-    branches:
-      - main
-
-jobs:
-  artifacts_test:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Run Test
-        run: |
-          echo "This is artifacts test"
-          pwd
-          ls -l > test.txt
-          zip test.zip test.txt
-      - name: Test artifact
-        uses: actions/upload-artifact@v2
-        with:
-          name: test.zip
-          path: ./test.zip
+#name: artifacts_test
+#
+#on:
+#  push:
+#    branches:
+#      - main
+#
+#jobs:
+#  artifacts_test:
+#    runs-on: ubuntu-latest
+#    steps:
+#      - name: Run Test
+#        run: |
+#          echo "This is artifacts test"
+#          pwd
+#          ls -l > test.txt
+#          zip test.zip test.txt
+#      - name: Test artifact
+#        uses: actions/upload-artifact@v2
+#        with:
+#          name: test.zip
+#          path: ./test.zip
+#
