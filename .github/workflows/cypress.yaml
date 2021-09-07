@@ -15,8 +15,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - run: cd test ; cypress run ; zip -r /tmp/videos.zip cypress/videos/*
-      - name: Test artifact
+      - name: Run cypress
+      - run: cd test ; cypress run ; cd cypress/videos/ ; zip -r /tmp/videos.zip *
+      - name: Upload videos
         uses: actions/upload-artifact@v2
         with:
           name: videos.zip
