@@ -1,0 +1,16 @@
+name: error_test
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  cypress_test_1:
+    runs-on: ubuntu-latest
+    steps:
+      - run: ls
+  cypress_test_2:
+    runs-on: ubuntu-latest
+    steps:
+      - run: ls
