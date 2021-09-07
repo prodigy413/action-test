@@ -9,7 +9,7 @@ jobs:
   cypress_test_1:
     runs-on: ubuntu-latest
     steps:
-      - run: ls
+      - run: lssssssssssssssss
   cypress_test_2:
     runs-on: ubuntu-latest
     steps:
