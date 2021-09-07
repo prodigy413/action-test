@@ -9,8 +9,10 @@ jobs:
   cypress_test_1:
     runs-on: ubuntu-latest
     steps:
-      - run: lssssssssssssssss
+      - run: ls
   cypress_test_2:
     runs-on: ubuntu-latest
+    if: ${{ success() }}
+    needs: ["cypress_test_1"]
     steps:
       - run: ls
