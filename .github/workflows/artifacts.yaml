@@ -1,0 +1,21 @@
+name: artifacts_test
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  artifacts_test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run Test
+        run: |
+          echo "test"
+          pwd
+          ls -l > test.txt
+      - name: Test artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: test-txt
+          path: ./test.txt

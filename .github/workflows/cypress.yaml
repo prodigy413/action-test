@@ -1,15 +1,16 @@
-name: cypress_test
-
-on:
-  push:
-    branches:
-      - main
-
-jobs:
-  cypress_test:
-    runs-on: ubuntu-latest
-    container: cypress/included:8.3.1
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - run: cd test ; cypress run ; ls -l cypress/videos/
+#name: cypress_test
+#
+#on:
+#  push:
+#    branches:
+#      - main
+#
+#jobs:
+#  cypress_test:
+#    runs-on: ubuntu-latest
+#    container: cypress/included:8.3.1
+#    steps:
+#      - name: Checkout
+#        uses: actions/checkout@v2
+#      - run: cd test ; cypress run ; ls -l cypress/videos/
+#
