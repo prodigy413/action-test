@@ -24,4 +24,5 @@ jobs:
           ls
           ls -l
           ls -lh
+          echo "test completed"
         if: ${{ always() }}
