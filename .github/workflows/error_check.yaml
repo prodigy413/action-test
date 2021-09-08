@@ -20,7 +20,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: test
-      - run: |
+        run: |
           ls
           ls -l
           ls -lh
