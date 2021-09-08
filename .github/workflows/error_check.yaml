@@ -1,21 +1,27 @@
-#name: error_test
-#
-#on:
-#  push:
-#    branches:
-#      - main
-#
-#jobs:
-#  cypress_test_1:
-#    runs-on: ubuntu-latest
-#    steps:
-#      - run: lssssss
-#      - run: echo "test1"
-#      - run: echo "test2"
-#  cypress_test_2:
-#    runs-on: ubuntu-latest
-#    if: ${{ success() }}
-#    needs: ["cypress_test_1"]
-#    steps:
-#      - run: ls
-#
+name: error_test
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  cypress_test_1:
+    runs-on: ubuntu-latest
+    steps:
+      - run: ls
+  cypress_test_2:
+    runs-on: ubuntu-latest
+    if: ${{ success() }}
+    needs: ["cypress_test_1"]
+    steps:
+      - run: ls
+  cypress_test_3:
+    runs-on: ubuntu-latest
+    steps:
+      - name: test
+      - run: |
+          ls
+          ls -l
+          ls -lh
+        if: ${{ always() }}
