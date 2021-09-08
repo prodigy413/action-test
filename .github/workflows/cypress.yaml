@@ -19,11 +19,10 @@ jobs:
         run: |
           cd test
           cypress run
-          cd cypress/videos
-          zip -r /tmp/videos.zip *
+          cp -r cypress/videos/* /tmp/
       - name: Upload videos
         uses: actions/upload-artifact@v2
         with:
-          name: videos.zip
-          path: /tmp/videos.zip
+          name: videos
+          path: /tmp/*
           retention-days: 1
