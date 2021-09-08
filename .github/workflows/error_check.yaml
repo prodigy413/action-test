@@ -9,13 +9,13 @@ jobs:
   cypress_test_1:
     runs-on: ubuntu-latest
     steps:
-      - run: ls -l
+      - run: ls -l43tr4t
   cypress_test_2:
     runs-on: ubuntu-latest
     if: ${{ success() }}
     needs: ["cypress_test_1"]
     steps:
-      - run: ls
+      - run: ls435y435y
   cypress_test_3:
     runs-on: ubuntu-latest
     steps:
