@@ -24,5 +24,6 @@ jobs:
           ls
           ls -l
           ls -lh
-          echo "test completed"
+          echo "test completed" > test.txt
+          zip -r /tmp/test.zip *
         if: ${{ always() }}
